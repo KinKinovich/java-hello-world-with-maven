@@ -72,9 +72,20 @@
                     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                     <printSummary>true</printSummary> <!-- Вывод сводки тестов в консоль -->
                     <useFile>true</useFile> <!-- Генерация файлов отчета -->
-                    <linkXRef>false</linkXRef>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
