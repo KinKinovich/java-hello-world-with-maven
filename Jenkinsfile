@@ -14,6 +14,7 @@ pipeline{
         stage('build'){
             steps{
                bat 'mvn test'
+               bat 'mvn surefire-report:report'
             }
         }
         stage('tests'){
@@ -23,8 +24,8 @@ pipeline{
                 
                 // Публикация HTML-отчёта (если используется)
                 publishHTML(target: [
-                    reportDir: 'target/site',
-                    reportFiles: 'surefire-report.html',
+                    reportDir: 'target/reports',
+                    reportFiles: 'surefire.html',
                     reportName: 'Surefire Report'
                 ])
             }

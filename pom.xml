@@ -72,6 +72,7 @@
                     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                     <printSummary>true</printSummary> <!-- Вывод сводки тестов в консоль -->
                     <useFile>true</useFile> <!-- Генерация файлов отчета -->
+                    <linkXRef>false</linkXRef>
                 </configuration>
             </plugin>
         </plugins>
